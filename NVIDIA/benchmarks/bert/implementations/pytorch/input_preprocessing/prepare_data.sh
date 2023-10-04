@@ -80,16 +80,16 @@ if (( SKIP==0 )) ; then
     mkdir -p ${DATADIR}/phase1 && cd ${DATADIR}/phase1
     ### Download 
     # bert_config.json
-    gdown "https://drive.google.com/uc?id=1fbGClQMi2CoMv7fwrwTC5YYPooQBdcFW&confirm=t"
+    gdown "https://drive.google.com/uc?id=1fbGClQMi2CoMv7fwrwTC5YYPooQBdcFW&confirm=t" --no-check-certificate
     # vocab.txt
-    gdown "https://drive.google.com/uc?id=1USK108J6hMM_d27xCHi738qBL8_BT1u1&confirm=t"
+    gdown "https://drive.google.com/uc?id=1USK108J6hMM_d27xCHi738qBL8_BT1u1&confirm=t" --no-check-certificate
     
     ### Download dataset
     mkdir -p ${DATADIR}/download && cd ${DATADIR}/download
     # md5 sums
-    gdown "https://drive.google.com/uc?id=1tmMgLwoBvbEJEHXh77sqrXYw5RpqT8R_&confirm=t"
+    gdown "https://drive.google.com/uc?id=1tmMgLwoBvbEJEHXh77sqrXYw5RpqT8R_&confirm=t" --no-check-certificate
     # processed chunks
-    gdown "https://drive.google.com/uc?id=14xV2OUGSQDG_yDBrmbSdcDC-QGeqpfs_&confirm=t"
+    gdown "https://drive.google.com/uc?id=14xV2OUGSQDG_yDBrmbSdcDC-QGeqpfs_&confirm=t" --no-check-certificate
     # unpack results and verify md5sums
     tar -xzf results_text.tar.gz && (cd results4 && md5sum --check ../bert_reference_results_text_md5.txt)
     
@@ -97,11 +97,11 @@ if (( SKIP==0 )) ; then
     ### Download TF1 checkpoint
     mkdir -p ${DATADIR}/phase1 && cd ${DATADIR}/phase1
     # model.ckpt-28252.data-00000-of-00001
-    gdown "https://drive.google.com/uc?id=1chiTBljF0Eh1U5pKs6ureVHgSbtU8OG_&confirm=t"
+    gdown "https://drive.google.com/uc?id=1chiTBljF0Eh1U5pKs6ureVHgSbtU8OG_&confirm=t" --no-check-certificate
     # model.ckpt-28252.index
-    gdown "https://drive.google.com/uc?id=1Q47V3K3jFRkbJ2zGCrKkKk-n0fvMZsa0&confirm=t"
+    gdown "https://drive.google.com/uc?id=1Q47V3K3jFRkbJ2zGCrKkKk-n0fvMZsa0&confirm=t" --no-check-certificate
     # model.ckpt-28252.meta
-    gdown "https://drive.google.com/uc?id=1vAcVmXSLsLeQ1q7gvHnQUSth5W_f_pwv&confirm=t"
+    gdown "https://drive.google.com/uc?id=1vAcVmXSLsLeQ1q7gvHnQUSth5W_f_pwv&confirm=t" --no-check-certificate
     
     cd ${DATADIR}
     

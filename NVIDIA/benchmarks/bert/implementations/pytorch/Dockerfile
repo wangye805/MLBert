@@ -46,5 +46,6 @@ RUN cd /workspace/bert/mhalib && python setup.py build && cp build/lib*/mhalib* 
 # Install TransformerEngine PR with FP8 FMHA support
 RUN rm -rf /usr/local/lib/python3.8/dist-packages/transformer_engine*
 RUN pip install --no-cache-dir git+https://github.com/NVIDIA/TransformerEngine.git@release_v0.8
-
+RUN pip uninstall -y flash_attn
+RUN pip install --no-cache-dir flash_attn==1.0.5
 WORKDIR /workspace/bert

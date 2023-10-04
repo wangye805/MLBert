@@ -72,7 +72,7 @@ func_update_file_path_for_ci() {
 : "${NV_GPU:="${CUDA_VISIBLE_DEVICES}"}"
 
 readonly docker_image=${CONT:-"nvcr.io/SET_THIS_TO_CORRECT_CONTAINER_TAG"}
-readonly _cont_name=language_model
+readonly _cont_name=yewang_language_model
 _cont_mounts=("--volume=${DATADIR_PHASE2}:/workspace/data_phase2" "--volume=${CHECKPOINTDIR_PHASE1}:/workspace/phase1 ")
 _cont_mounts+=("--volume=${EVALDIR}:/workspace/evaldata" "--volume=${LOGDIR}:/results")
 
@@ -92,7 +92,7 @@ cleanup_docker
 trap 'set -eux; cleanup_docker' EXIT
 
 # Setup container
-nvidia-docker run --rm --init --detach --gpus='"'device=${NV_GPU}'"' \
+docker run --rm --init --detach --gpus='"'device=${NV_GPU}'"' \
     --net=host --uts=host --ipc=host --security-opt=seccomp=unconfined \
     --ulimit=stack=67108864 --ulimit=memlock=-1 \
     --name="${_cont_name}" ${_cont_mounts[@]} \

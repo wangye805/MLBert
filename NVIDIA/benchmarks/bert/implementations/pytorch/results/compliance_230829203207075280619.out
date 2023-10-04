@@ -1,0 +1,6 @@
+INFO - Running compliance on file: /results/230829203207075280619_1.log
+INFO -  Compliance checks: training_2.1.0/common.yaml
+INFO -  Compliance checks: training_2.1.0/closed_common.yaml
+INFO -  Compliance checks: training_2.1.0/closed_bert.yaml
+WARNING -  Failed checks for eval_accuracy : (v['value'] >= 0.720) and v['value'] < 1.0
+ERROR - FAILED

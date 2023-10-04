@@ -1,0 +1,279 @@
++ echo 'Beginning trial 1 of 1'
+Beginning trial 1 of 1
++ '[' 1 -eq 1 ']'
++ sync
++ sudo /sbin/sysctl vm.drop_caches=3
+vm.drop_caches = 3
++ docker exec -it yewang_language_model python -c '
+from mlperf_logger import mllogger
+mllogger.event(key=mllogger.constants.CACHE_CLEAR, value=True)'
+:::MLLOG {"namespace": "", "time_ms": 1693236031386, "event_type": "POINT_IN_TIME", "key": "cache_clear", "value": true, "metadata": {"file": "<string>", "lineno": 3}}
++ docker exec -it --env=BATCHSIZE --env=CONTAINER_PRELOAD_LUSTRE --env=DGXHT --env=DGXNGPU --env=DGXNNODES --env=DGXNSOCKET --env=DGXSOCKETCORES --env=DGXSYSTEM --env=EVAL_ITER_SAMPLES --env=EVAL_ITER_START_SAMPLES --env=EXTRA_PARAMS --env=GRADIENT_STEPS --env=INIT_LOSS_SCALE --env=LR --env=MAX_SAMPLES_TERMINATION --env=MAX_STEPS --env=OPT_LAMB_BETA_1 --env=OPT_LAMB_BETA_2 --env=PACKING_FACTOR --env=PHASE --env=SLURM_NTASKS --env=START_WARMUP_STEP --env=WALLTIME --env=WALLTIME_MINUTES --env=WARMUP_STEPS --env=WEIGHT_DECAY_RATE --env=SEED yewang_language_model python -m torch.distributed.run --standalone --no_python --nproc_per_node=8 ./run_and_time.sh
+master_addr is only used for static rdzv_backend and when rdzv_endpoint is not specified.
+WARNING:__main__:
+*****************************************
+Setting OMP_NUM_THREADS environment variable for each process to be 1 in default, to avoid your system being overloaded, please further tune the variable for optimal performance in your application as needed. 
+*****************************************
+Run vars: id 3637 gpus 8 mparams ''
+Run vars: id 20939 gpus 8 mparams ''
+Run vars: id 22075 gpus 8 mparams ''
+Run vars: id 21581 gpus 8 mparams ''
+Run vars: id 16101 gpus 8 mparams ''
+Run vars: id 478 gpus 8 mparams ''
+Run vars: id 30906 gpus 8 mparams ''
+Run vars: id 19965 gpus 8 mparams ''
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+STARTING TIMING RUN AT 2023-08-28 03:20:33 PM
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+/usr/local/lib/python3.10/dist-packages/apex/__init__.py:68: DeprecatedFeatureWarning: apex.amp is deprecated and will be removed by the end of February 2023. Use [PyTorch AMP](https://pytorch.org/docs/stable/amp.html)
+  warnings.warn(msg, DeprecatedFeatureWarning)
+:::MLLOG {"namespace": "", "time_ms": 1693236046744, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046744, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046745, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046745, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046745, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046745, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046745, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+:::MLLOG {"namespace": "", "time_ms": 1693236046760, "event_type": "INTERVAL_START", "key": "init_start", "value": null, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1263}}
+device: cuda:5 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:3 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:1 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:7 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:2 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:6 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:4 n_gpu: 8, distributed training: True, 16-bits training: True
+device: cuda:0 n_gpu: 8, distributed training: True, 16-bits training: True
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "submission_benchmark", "value": "bert", "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1270}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "submission_org", "value": "SUBMISSION_ORG_PLACEHOLDER", "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1270}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "submission_division", "value": "closed", "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1270}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "submission_status", "value": "onprem", "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1270}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "submission_platform", "value": "1xSUBMISSION_PLATFORM_PLACEHOLDER", "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1270}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "seed", "value": 21422, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1272}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "global_batch_size", "value": 384, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1274}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "d_batch_size", "value": 48, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1276}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "gradient_accumulation_steps", "value": 1, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1278}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "max_predictions_per_seq", "value": 76, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1280}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "opt_learning_rate_training_steps", "value": 700.0, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1282}}
+:::MLLOG {"namespace": "", "time_ms": 1693236048128, "event_type": "POINT_IN_TIME", "key": "num_warmup_steps", "value": 200330.0, "metadata": {"file": "/workspace/bert/run_pretraining.py", "lineno": 1284}}
+parsed args:
+Namespace(input_dir='/workspace/data_phase2', packed_samples=False, order_samples=False, max_pack_factor=1, average_packing_rate=1, synthetic_input=False, bert_model='bert-large-uncased', cuda_graph_mode='segmented', max_iterations_per_graph=4, output_dir='/results', eval_dir='/workspace/evaldata', eval_iter_start_samples=200000, eval_iter_samples=200000, num_eval_examples=10000, cache_eval_data=True, init_checkpoint='/workspace/phase1/model.ckpt-28252.pt', init_tf_checkpoint=None, max_seq_length=512, max_predictions_per_seq=76, train_batch_size=48, eval_batch_size=16, learning_rate=0.00258, weight_decay_rate=0.1, opt_lamb_beta_1=0.6, opt_lamb_beta_2=0.7, max_steps=700.0, max_samples_termination=4500000.0, warmup_proportion=0.0, warmup_steps=200330.0, start_warmup_step=-200000.0, local_rank=0, seed=21422, gradient_accumulation_steps=1, fp16=True, loss_scale=0.0, log_freq=0.0, checkpoint_activations=False, resume_from_checkpoint=False, keep_n_most_recent_checkpoints=20, num_samples_per_checkpoint=500000, min_samples_to_start_checkpoints=3000000, skip_checkpoint=True, phase2=True, allreduce_post_accumulation=False, allreduce_post_accumulation_fp16=False, do_train=True, exchange_padding=True, unpad=True, unpad_fmha=True, pad_fmha=False, pad=False, enable_fuse_dropout=False, disable_fuse_mask=False, disable_fuse_scale=False, disable_fuse_qkv=False, disable_apex_softmax=False, enable_stream=False, fused_gemm_gelu=True, fused_mha=False, fused_gelu_bias=False, fused_dropout_add=True, fused_bias_mha=True, fused_bias_fc=True, fused_bias_fc_loss_head=True, dense_seq_output=True, use_env=False, bert_config_path='/workspace/phase1/bert_config.json', target_mlm_accuracy=0.72, train_mlm_accuracy_window_size=0, num_epochs_to_generate_seeds_for=2, use_cuda_graph=False, use_ddp=False, ddp_type='apex', use_gradient_as_bucket_view=False, bypass_amp=False, distributed_lamb=True, dwu_group_size=0, dwu_num_blocks=1, dwu_num_chunks=1, dwu_num_rs_pg=1, dwu_num_ar_pg=1, dwu_num_ag_pg=1, dwu_overlap_reductions=False, dwu_e5m2_allgather=False, use_transformer_engine2=True, n_gpu=8, device=device(type='cuda', index=0))
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+      File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+        model = BertForPreTrainingSegmented(config)from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+Traceback (most recent call last):
+  File "/workspace/bert/run_pretraining.py", line 1998, in <module>
+    args, final_loss, train_time_raw = main()
+  File "/workspace/bert/run_pretraining.py", line 1293, in main
+    model, optimizer, lr_scheduler, checkpoint, global_step = prepare_model_and_optimizer(args, device, capture_stream)
+  File "/workspace/bert/run_pretraining.py", line 847, in prepare_model_and_optimizer
+    model = BertForPreTrainingSegmented(config)
+  File "/workspace/bert/modeling.py", line 1284, in __init__
+    self.bert_model_segment = BertForPreTrainingModelOnly(config)
+  File "/workspace/bert/modeling.py", line 1232, in __init__
+    self.bert = BertModel(config)
+  File "/workspace/bert/modeling.py", line 1095, in __init__
+    self.encoder = BertEncoder(config)
+  File "/workspace/bert/modeling.py", line 703, in __init__
+    layer = BertTransformerLayer2(config)
+  File "/workspace/bert/modeling.py", line 609, in __init__
+    from te_layers import FP8_MHA, LayerNormMLP
+  File "/workspace/bert/te_layers.py", line 24, in <module>
+    from transformer_engine.pytorch.module import TransformerEngineBaseModule, _prepare_backward
+ImportError: cannot import name 'TransformerEngineBaseModule' from 'transformer_engine.pytorch.module' (/usr/local/lib/python3.10/dist-packages/transformer_engine/pytorch/module/__init__.py)
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 272 closing signal SIGTERM
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 273 closing signal SIGTERM
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 274 closing signal SIGTERM
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 275 closing signal SIGTERM
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 276 closing signal SIGTERM
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 283 closing signal SIGTERM
+[2023-08-28 15:20:48,939] torch.distributed.elastic.multiprocessing.api: [WARNING] Sending process 289 closing signal SIGTERM
+[2023-08-28 15:20:48,941] torch.distributed.elastic.multiprocessing.api: [ERROR] failed (exitcode: 1) local_rank: 5 (pid: 278) of binary: ./run_and_time.sh
+Traceback (most recent call last):
+  File "/usr/lib/python3.10/runpy.py", line 196, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+  File "/usr/lib/python3.10/runpy.py", line 86, in _run_code
+    exec(code, run_globals)
+  File "/usr/local/lib/python3.10/dist-packages/torch/distributed/run.py", line 801, in <module>
+    main()
+  File "/usr/local/lib/python3.10/dist-packages/torch/distributed/elastic/multiprocessing/errors/__init__.py", line 346, in wrapper
+    return f(*args, **kwargs)
+  File "/usr/local/lib/python3.10/dist-packages/torch/distributed/run.py", line 797, in main
+    run(args)
+  File "/usr/local/lib/python3.10/dist-packages/torch/distributed/run.py", line 788, in run
+    elastic_launch(
+  File "/usr/local/lib/python3.10/dist-packages/torch/distributed/launcher/api.py", line 134, in __call__
+    return launch_agent(self._config, self._entrypoint, list(args))
+  File "/usr/local/lib/python3.10/dist-packages/torch/distributed/launcher/api.py", line 264, in launch_agent
+    raise ChildFailedError(
+torch.distributed.elastic.multiprocessing.errors.ChildFailedError: 
+============================================================
+./run_and_time.sh FAILED
+------------------------------------------------------------
+Failures:
+  <NO_OTHER_FAILURES>
+------------------------------------------------------------
+Root Cause (first observed failure):
+[0]:
+  time      : 2023-08-28_15:20:48
+  host      : GPU8518
+  rank      : 5 (local_rank: 5)
+  exitcode  : 1 (pid: 278)
+  error_file: <N/A>
+  traceback : To enable traceback see: https://pytorch.org/docs/stable/elastic/errors.html
+============================================================
